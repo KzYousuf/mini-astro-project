@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Counter from '../components/Counter.tsx';
+import '../styles/global.css'
+
+const title = "Kams Mini Project";
+---
+
+<BaseLayout title={title}>
+  <div class="max-w-4xl px-6 py-12"> <!--setting the max width and adding horizontal/vertical padding -->
+    <section class="mb-12 text-center"> <!--Adding margin to the bottom and centering the text -->
+      <h1 class="text-4xl font-bold mb-4"> <!--font size, font bold, and bottom margin -->
+        Welcome to Kams Mini Project!
+      </h1>
+      <p class="text-gray-600"> <!-- setting the color of the text -->
+        Using Astro, React, and Tailwind to build a counter
+      </p>
+    </section>
+
+    <section class="bg-gray-200 p-6 rounded shadow"> <!--setting the background color, padding, and some styling effects -->
+      <h2 class="text-2xl font-semibold mb-2"> <!--font size, font semibold and bottom margin -->
+        Interactive Portion
+      </h2>
+      <p class="text-gray-600 mb-4"> <!--setting the text to gray and adding bottom margin -->
+        This button is reactive
+      </p>
+
+      <Counter client:load />
+    </section>
+  </div>
+</BaseLayout>
